@@ -1,8 +1,12 @@
-version: "3"
+version: "3.7"
 
 services:
   api:
     build: .
+    container_name: node_container
+    restart: always
+    volumes: 
+      - .:/home/node/app
     ports: 
-      - "8080:8080"
+      - "${APP_PORT}:${APP_PORT}"
     command: npm start

@@ -4,12 +4,12 @@ WORKDIR /usr/app
 
 COPY package*.json ./
 
-RUN npm install -g yarn
+RUN npm install yarn
 
 RUN yarn install
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE ${APP_PORT}
 
 CMD [ "yarn", "start" ]
